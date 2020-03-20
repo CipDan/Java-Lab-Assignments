@@ -1,0 +1,6 @@
+#Lab 4's Assignment - Notes
+
+1. Begin code reading with class Problem;
+2. For Optional, I made use of external library 'com.github.javafaker.Faker' from Maven;
+3. Compulsory section is included in ProblemInput.generateInputBasic();
+4. Part of Optional which uses the external library is included in ProblemInput.generateInputFaker().
