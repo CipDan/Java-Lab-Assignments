@@ -5,6 +5,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * An implementation of Gale-Shapley Algorithm.
+ */
 public class GaleShapley implements Algorithm {
     @Override
     public void createMatchingList(ProblemInput input, Partition partition) {
@@ -23,7 +26,7 @@ public class GaleShapley implements Algorithm {
                     break;
                 } else {
                     List<Resident> competitorList = partition.findPartnerList(hospital);
-                    for(Resident competitor : competitorList){
+                    for (Resident competitor : competitorList) {
                         if (input.getHosPrefMap().get(hospital).indexOf(candidate) <
                                 input.getHosPrefMap().get(hospital).indexOf(competitor)) {
                             partition.getMatching(competitor).setResident(candidate);

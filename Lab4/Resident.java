@@ -2,13 +2,26 @@ package Lab4;
 
 import java.util.Objects;
 
+/**
+ * A representation of a resident.
+ */
 public class Resident {
     private String name;
 
+    /**
+     * Creates a new resident.
+     *
+     * @param name the resident's name.
+     */
     public Resident(String name) {
         this.name = name;
     }
 
+    /**
+     * Returns the resident's name.
+     *
+     * @return a <code>String</code> representing the resident's name.
+     */
     public String getName() {
         return name;
     }

@@ -5,11 +5,17 @@ import com.github.javafaker.Faker;
 import java.util.*;
 import java.util.stream.IntStream;
 
+/**
+ * A representation of The Hospitals/Residents Problem (HR)'s Input.
+ */
 public class ProblemInput {
     private Map<Resident, List<Hospital>> resPrefMap = new HashMap<>();
     private Map<Hospital, List<Resident>> hosPrefMap = new LinkedHashMap<>();
 
-    public void generateInputBasic(){
+    /**
+     * Generates basic input. Generation is strictly dependant on the method's code.
+     */
+    public void generateInputBasic() {
         //This is test code for the Compulsory section!
         var residents = IntStream.rangeClosed(0, 3).mapToObj(i -> new Resident("R" + i)).toArray(Resident[]::new);
         var hospitals = IntStream.rangeClosed(0, 2).mapToObj(i -> new Hospital("H" + i, (i < 2) ? i + 1 : i)).toArray(Hospital[]::new);
@@ -46,7 +52,11 @@ public class ProblemInput {
         hospitalSet.stream().filter(hospital -> hosPrefMap.get(hospital).get(0).equals(residents[0])).forEach(System.out::println);
     }
 
-    public void generateInputFaker(){
+    /**
+     * Generates input by making use of the external library 'com.github.javafaker.Faker' from Maven.
+     * Input is realistic and independent from method code.
+     */
+    public void generateInputFaker() {
         //This is test code for the Optional and Bonus sections!
         Faker faker = new Faker();
         var residents = IntStream.rangeClosed(0, 3).mapToObj(i -> new Resident(faker.name().fullName())).toArray(Resident[]::new);
@@ -59,10 +69,20 @@ public class ProblemInput {
         System.out.println();
     }
 
+    /**
+     * Returns the preferences of the residents.
+     *
+     * @return a <code>Map</code> of the residents' preferences.
+     */
     public Map<Resident, List<Hospital>> getResPrefMap() {
         return resPrefMap;
     }
 
+    /**
+     * Returns the preferences of the hospitals.
+     *
+     * @return a <code>Map</code> of the hospitals's preferences.
+     */
     public Map<Hospital, List<Resident>> getHosPrefMap() {
         return hosPrefMap;
     }

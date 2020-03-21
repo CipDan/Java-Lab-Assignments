@@ -5,6 +5,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * An implementation of a "first come, first served" algorithm.
+ */
 public class FirstComeFirstServed implements Algorithm {
     @Override
     public void createMatchingList(ProblemInput input, Partition partition) {
