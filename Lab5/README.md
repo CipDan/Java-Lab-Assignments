@@ -1,4 +1,4 @@
-#Lab 5's Assignment - Notes
+# Lab 5's Assignment - Notes
 
 1. Begin code reading with class Main.
 2. java.net.URI, java.beans.XMLDecoder, java.beans.XMLEncoder are used for Optional.
