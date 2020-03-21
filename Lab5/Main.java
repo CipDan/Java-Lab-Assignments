@@ -2,8 +2,14 @@ package Lab5;
 
 import java.io.*;
 
+/**
+ * A working space for all the assignments.
+ */
 public class Main {
 
+    /**
+     * Tests whether problems arise when creating and saving of a file.
+     */
     private void testCreateSave() {
         Catalog catalog = new Catalog("Java Resources", "./catalog.xml");
         Document doc1 = new Document("java1", "Java Course 1",
@@ -19,6 +25,9 @@ public class Main {
         }
     }
 
+    /**
+     * Tests whether problems arise when loading and viewing the content of a file.
+     */
     private void testLoadView() {
         try {
             Catalog catalog = Manager.load("./catalog.xml");
@@ -35,6 +44,11 @@ public class Main {
         }
     }
 
+    /**
+     * Main function.
+     *
+     * @param args A list of user-given arguments.
+     */
     public static void main(String[] args) {
         Main app = new Main();
         app.testCreateSave();
