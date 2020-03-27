@@ -1,6 +1,7 @@
 package Lab5;
 
 import org.apache.commons.validator.routines.UrlValidator;
+import ucar.nc2.util.IO;
 
 import java.awt.*;
 import java.io.*;
@@ -59,11 +60,15 @@ public class Manager {
      * @throws IOException            if an I/O error occurs.
      * @throws ClassNotFoundException class of a serialized object cannot be found.
      */
-    public static Catalog binaryLoad(String path) throws IOException, ClassNotFoundException {
+    public static Catalog binaryLoad(String path) throws InvalidCatalogException, IOException, ClassNotFoundException {
         //This is test code for the Compulsory section!
         try (var oos = new ObjectInputStream(
                 new FileInputStream(path))) {
-            return (Catalog) oos.readObject();
+            Object obj = oos.readObject();
+            if (obj instanceof Catalog)
+                return (Catalog) oos.readObject();
+            else
+                throw new InvalidCatalogException();
         }
     }
 
@@ -75,11 +80,15 @@ public class Manager {
      * @throws IOException            if an I/O error occurs.
      * @throws ClassNotFoundException class of a serialized object cannot be found.
      */
-    public static Catalog plaintextLoad(String path) throws IOException, ClassNotFoundException {
+    public static Catalog plaintextLoad(String path) throws InvalidCatalogException, IOException, ClassNotFoundException {
         //This is test code for the Optional and Bonus sections!
         try (var decoder = new XMLDecoder(new BufferedInputStream(
                 new FileInputStream(path)))) {
-            return (Catalog) decoder.readObject();
+            Object obj = decoder.readObject();
+            if (obj instanceof Catalog)
+                return (Catalog) decoder.readObject();
+            else
+                throw new InvalidCatalogException();
         }
     }
 
@@ -91,7 +100,7 @@ public class Manager {
      * @throws IOException            if an I/O error occurs.
      * @throws ClassNotFoundException class of a serialized object cannot be found.
      */
-    public static Catalog load(String path) throws IOException, ClassNotFoundException {
+    public static Catalog load(String path) throws InvalidCatalogException, IOException, ClassNotFoundException {
         //return binaryLoad(path);
         return plaintextLoad(path);
     }

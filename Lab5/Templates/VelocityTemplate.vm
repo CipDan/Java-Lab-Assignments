@@ -1,0 +1,23 @@
+#* @vtlvariable name="catalog" type="Lab5.Catalog" *#
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Catalog Report</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<ul>
+    <li>Name: $catalog.getName()</li>
+    <li>Path: $catalog.getPath()</li>
+    <li>Documents Stored:
+        <ol>
+            #foreach($document in $catalog.getDocuments())
+                <li>Id: $document.getId() | Name: $document.getName() | Location: $document.getLocation()</li>
+            #end
+        </ol>
+    </li>
+</ul>
+</body>
+</html>
+
+

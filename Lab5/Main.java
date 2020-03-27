@@ -41,6 +41,10 @@ public class Main {
             System.out.println("Unexpected error when loading class!");
             e.printStackTrace();
             System.exit(-1);
+        } catch (InvalidCatalogException e) {
+            System.out.println("Invalid catalog file!");
+            e.printStackTrace();
+            System.exit(-1);
         }
     }
 
@@ -50,8 +54,9 @@ public class Main {
      * @param args A list of user-given arguments.
      */
     public static void main(String[] args) {
-        Main app = new Main();
+        MyShell.executeShell();
+        /*Main app = new Main();
         app.testCreateSave();
-        app.testLoadView();
+        app.testLoadView();*/
     }
 }

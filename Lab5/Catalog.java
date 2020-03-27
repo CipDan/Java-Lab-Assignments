@@ -3,6 +3,7 @@ package Lab5;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * A named container which stores data about different documents.
@@ -18,6 +19,7 @@ public class Catalog implements Serializable {
 
     /**
      * Creates a new catalog.
+     *
      * @param name name of the catalog.
      * @param path the location on the local machine where it can be found.
      */
@@ -28,6 +30,7 @@ public class Catalog implements Serializable {
 
     /**
      * Adds a document to the list in the catalog.
+     *
      * @param doc the document to be added.
      */
     public void add(Document doc) {
@@ -41,6 +44,7 @@ public class Catalog implements Serializable {
 
     /**
      * Returns the name of the catalog.
+     *
      * @return a <code>String</code> representing the catalog's name.
      */
     public String getName() {
@@ -54,6 +58,7 @@ public class Catalog implements Serializable {
 
     /**
      * Returns the location of the catalog on the local machine.
+     *
      * @return a <code>String</code> representing the location of the catalog.
      */
     public String getPath() {
@@ -62,6 +67,7 @@ public class Catalog implements Serializable {
 
     /**
      * Returns the list of documents in the catalog.
+     *
      * @return a list of all the documents stored in the catalog.
      */
     public List<Document> getDocuments() {
@@ -75,6 +81,7 @@ public class Catalog implements Serializable {
 
     /**
      * Searches for a document based on its id.
+     *
      * @param id the id of a document in the catalog.
      * @return the found document or <code>null</code> if there are none with the specified id.
      */
