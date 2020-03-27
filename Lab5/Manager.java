@@ -1,7 +1,6 @@
 package Lab5;
 
 import org.apache.commons.validator.routines.UrlValidator;
-import ucar.nc2.util.IO;
 
 import java.awt.*;
 import java.io.*;
@@ -66,7 +65,7 @@ public class Manager {
                 new FileInputStream(path))) {
             Object obj = oos.readObject();
             if (obj instanceof Catalog)
-                return (Catalog) oos.readObject();
+                return (Catalog) obj;
             else
                 throw new InvalidCatalogException();
         }
@@ -86,7 +85,7 @@ public class Manager {
                 new FileInputStream(path)))) {
             Object obj = decoder.readObject();
             if (obj instanceof Catalog)
-                return (Catalog) decoder.readObject();
+                return (Catalog) obj;
             else
                 throw new InvalidCatalogException();
         }
