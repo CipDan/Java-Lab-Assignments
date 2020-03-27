@@ -54,7 +54,9 @@ public class Main {
      * @param args A list of user-given arguments.
      */
     public static void main(String[] args) {
+        //This is test code for the Optional and Bonus sections!
         MyShell.executeShell();
+        //This is test code for the Compulsory section!
         /*Main app = new Main();
         app.testCreateSave();
         app.testLoadView();*/
