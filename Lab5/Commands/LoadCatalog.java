@@ -7,6 +7,9 @@ import Lab5.Manager;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Implementation of 'load-catalog' command.
+ */
 public class LoadCatalog implements Command {
 
     @Override

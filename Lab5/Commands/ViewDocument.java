@@ -6,6 +6,9 @@ import Lab5.Manager;
 
 import java.util.List;
 
+/**
+ * Implementation of 'view-document' command.
+ */
 public class ViewDocument implements Command {
 
     @Override

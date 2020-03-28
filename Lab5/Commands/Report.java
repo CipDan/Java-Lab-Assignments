@@ -10,6 +10,9 @@ import java.io.*;
 import java.util.List;
 import java.util.Properties;
 
+/**
+ * Implementation of 'report' command.
+ */
 public class Report implements Command {
 
     @Override
@@ -39,6 +42,12 @@ public class Report implements Command {
         }
     }
 
+    /**
+     * Prepares and loads the HTML report.
+     *
+     * @param catalog the catalog from which will be gathered information.
+     * @throws IOException if the named file exists but is a directory rather than a regular file, does not exist but cannot be created, or cannot be opened for any other reason.
+     */
     private void prepareReportHTML(Catalog catalog) throws IOException {
         VelocityEngine velocityEngine = new VelocityEngine();
         Properties props = new Properties();

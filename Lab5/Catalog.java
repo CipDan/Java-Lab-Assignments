@@ -3,7 +3,6 @@ package Lab5;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * A named container which stores data about different documents.

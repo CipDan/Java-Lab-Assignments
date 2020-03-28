@@ -4,6 +4,9 @@ import Lab5.Catalog;
 
 import java.util.List;
 
+/**
+ * Implementation of 'add-tag' command.
+ */
 public class AddTag implements Command {
     @Override
     public void execute(List<Catalog> catalogs, String[] params) {

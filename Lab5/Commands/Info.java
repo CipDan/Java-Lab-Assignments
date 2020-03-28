@@ -15,6 +15,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Implementation of 'info' command.
+ */
 public class Info implements Command {
 
     @Override
@@ -35,6 +38,11 @@ public class Info implements Command {
         }
     }
 
+    /**
+     * Gathers the info and prepares it.
+     *
+     * @param catalog the catalog from whose file will be gathered information.
+     */
     private void prepareFileInfo(Catalog catalog) {
         try {
             Parser parser = new AutoDetectParser();

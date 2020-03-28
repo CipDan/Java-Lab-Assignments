@@ -5,6 +5,9 @@ import Lab5.Document;
 
 import java.util.List;
 
+/**
+ * Implementation of 'add-document' command.
+ */
 public class AddDocument implements Command {
     @Override
     public void execute(List<Catalog> catalogs, String[] params) {

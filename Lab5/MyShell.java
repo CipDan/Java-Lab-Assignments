@@ -4,7 +4,14 @@ import org.apache.commons.lang.ArrayUtils;
 
 import java.util.*;
 
+/**
+ * Implementation of a simple shell.
+ */
 public class MyShell {
+
+    /**
+     * Starts the shell, which will handle the commands written from keyboard.
+     */
     public static void executeShell() {
         String[] args;
         String auxiliary;

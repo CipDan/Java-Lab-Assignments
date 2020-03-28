@@ -6,6 +6,9 @@ import Lab5.Manager;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Implementation of 'save-catalog' command.
+ */
 public class SaveCatalog implements Command {
 
     @Override
