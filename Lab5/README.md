@@ -4,7 +4,7 @@
 2. java.net.URI, java.beans.XMLDecoder, java.beans.XMLEncoder are used for Optional.
 3. Compulsory, Optional and Bonus sections are highlighted with corresponding comments in the Main class.
 4. Classes for Compulsory: Document, Catalog, Main, Manager.
-5. The @Deprecated methods were only created for the XML encryption and decryption, since a Java Beans Object requires them.
+5. The `@Deprecated` methods were only created for the XML encryption and decryption, since a Java Beans Object requires them.
    They normally had no reason to be created, and therefore are not used in the code.
 6. The classes for all the commands where bundled in the Commands package.
 7. For the HTML report, I made use of Apache Velocity, and for Metadata gathering, of Apache Tika.
