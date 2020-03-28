@@ -1,9 +1,19 @@
 package Lab6;
 
+/**
+ * A representation of a regular polygon.
+ */
 public class RegularPolygon {
     double[] xCoord;
     double[] yCoord;
 
+    /**
+     * Creates a new polygon.
+     * @param x0 horizontal coordinate of the polygon's center.
+     * @param y0 vertical coordinate of the polygon's center.
+     * @param radius the radius of the polygon.
+     * @param edges the number of edges the polygon haas.
+     */
     public RegularPolygon(int x0, int y0, int radius, int edges) {
         xCoord = new double[edges];
         yCoord = new double[edges];

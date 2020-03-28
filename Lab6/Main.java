@@ -6,6 +6,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Implementation of the application. Loads all the components, prepares the scene and displays the content.
+ */
 public class Main extends Application {
 
     @Override

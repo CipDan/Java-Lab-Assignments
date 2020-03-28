@@ -10,6 +10,9 @@ import javafx.scene.paint.Color;
 
 import java.util.Random;
 
+/**
+ * Controller for event handling.
+ */
 public class Controller {
 
     @FXML
@@ -39,6 +42,9 @@ public class Controller {
     @FXML
     private Button exit;
 
+    /**
+     * Loads the drawn Polygon.
+     */
     public void loadFigure() {
         GraphicsContext gc = canvas.getGraphicsContext2D();
         boolean toggleVal = figurePlacement.isSelected();
@@ -49,6 +55,11 @@ public class Controller {
         }
     }
 
+    /**
+     * Draws a polygon at a random location.
+     *
+     * @param gc the graphics context that handles the canvas.
+     */
     public void prepareRandomPolygon(GraphicsContext gc) {
         int edges = edgeNum.getValue();
         Color color = figureColour.getValue();
@@ -66,6 +77,11 @@ public class Controller {
         gc.fillPolygon(polygon.xCoord, polygon.yCoord, edges);
     }
 
+    /**
+     * Creates an event handler for drawing a polygon on mouse click.
+     *
+     * @param gc the graphics context that handles the canvas.
+     */
     public void prepareOnClickPolygon(GraphicsContext gc) {
         canvas.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
             @Override
@@ -85,15 +101,24 @@ public class Controller {
 
     }
 
+    /**
+     *
+     */
     public void saveFigure() {
 
     }
 
+    /**
+     * Clears the canvas.
+     */
     public void resetCanvas() {
         GraphicsContext gc = canvas.getGraphicsContext2D();
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
     }
 
+    /**
+     * Exits the application.
+     */
     public void exitApp() {
         System.exit(0);
     }
