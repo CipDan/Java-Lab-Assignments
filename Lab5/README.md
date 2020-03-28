@@ -11,7 +11,7 @@
 8. MyShell contains the Code for the Optional and Bonus sections.
 9. In Templates package is stored a .vm file serving as template for the HTML report.
 10. Classes for Optional and Bonus: All classes in Lab5.Commands, all templates in Lab5.Templates, InvalidCatalogException, LoadCommand and MyShell classes.
-11. Since there is no 'help' command implemented and for the better understanding of how the commands work, here is a list of all the commands and their parameters ('exit' and NEWLINE were directly implemented in MyShell):
+11. Since there is no `help`command implemented and for the better understanding of how the commands work, here is a list of all the commands and their parameters ('exit' and NEWLINE were directly implemented in MyShell):
     * __create-catalog__ *catalog_name* *catalog_path*
     * __add-document__ *catalog_name* *document_id* *document_name* *document_location* (the location can be either a path or a web address)
     * __add-tag__ *catalog_name* *document_id* *tag_key* *tag*
