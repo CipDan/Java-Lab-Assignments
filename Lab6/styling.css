@@ -2,6 +2,12 @@
     -fx-background-color: blanchedalmond;
 }
 
+#panel {
+    -fx-border-style: solid solid solid solid;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+}
+
 .optionBar {
     -fx-border-style: solid;
     -fx-background-color: #090a0c,
@@ -13,7 +19,7 @@
     -fx-border-color: black;
 }
 
-.button {
+.optionButton {
     -fx-background-color: linear-gradient(#ff5400, #be1d00);
     -fx-background-radius: 30;
     -fx-cursor: hand;
@@ -28,7 +34,6 @@
     linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),
     linear-gradient(from 0% 0% to 15% 50%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
     -fx-background-radius: 20;
-    -fx-cursor: HAND;
 }
 
 .customize {
@@ -83,10 +88,226 @@
 }
 
 #choices {
-    -fx-background-color: linear-gradient(#e68400, #d25f00),
-    linear-gradient(#f6b431, #e68400),
-    linear-gradient(#eea10b 100%, #cc7100),
-    linear-gradient(#eea10b 100%, #cc7100 50%, #b86600 100%),
-    linear-gradient(from 0% 0% to 15% 50%, rgba(243, 192, 130, 1), rgba(255, 255, 255, 0));
+    -fx-background-color: #090a0c,
+    linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+    linear-gradient(#20262b, #191d22),
+    radial-gradient(center 50% 0%, radius 100%, rgba(114, 131, 148, 0.9), rgba(255, 255, 255, 0));
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
     -fx-font-family: Unispace;
+    -fx-mark-color: white;
 }
+
+#choices .context-menu {
+    -fx-background-color: #090a0c,
+    linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+    linear-gradient(#20262b, #191d22),
+    radial-gradient(center 50% 0%, radius 100%, rgba(114, 131, 148, 0.9), rgba(255, 255, 255, 0));
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
+}
+
+#choices .label {
+    -fx-text-fill: white;
+}
+
+#choices .menu-item:focused {
+    -fx-background-color: linear-gradient(#ffd65b, #e68400),
+    linear-gradient(#ffef84, #f2ba44),
+    linear-gradient(#ffea6a, #efaa22),
+    linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),
+    linear-gradient(from 0% 0% to 15% 50%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+}
+
+.customButton {
+    -fx-background-color: #090a0c,
+    linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+    linear-gradient(#20262b, #191d22),
+    radial-gradient(center 50% 0%, radius 100%, rgba(114, 131, 148, 0.9), rgba(255, 255, 255, 0));
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
+    -fx-font-family: Unispace;
+    -fx-pref-width: 150;
+}
+
+.dialog-pane {
+    -fx-background-color: white;
+}
+
+#instructions {
+    -fx-padding: 8 15 15 15;
+    -fx-background-insets: 0, 0 0 5 0, 0 0 6 0, 0 0 7 0;
+    -fx-background-radius: 8;
+    -fx-background-color: linear-gradient(#ffd65b, #e68400),
+    linear-gradient(#ffef84, #f2ba44),
+    linear-gradient(#ffea6a, #efaa22),
+    linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),
+    linear-gradient(from 0% 0% to 15% 50%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 4, 0, 0, 1);
+    -fx-pref-width: 160;
+    -fx-text-fill: rgba(0, 0, 0, 0.8);
+}
+
+.info-box {
+    -fx-background-color: #090a0c,
+    linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+    linear-gradient(#20262b, #191d22),
+    radial-gradient(center 50% 0%, radius 100%, rgba(114, 131, 148, 0.9), rgba(255, 255, 255, 0));
+}
+
+.info-box > .content {
+    -fx-pref-height: 150;
+    -fx-font-family: Unispace;
+    -fx-font-size: smaller;
+    -fx-text-fill: white;
+}
+
+.info-box:header > .header-panel {
+    -fx-font-family: Unispace;
+    -fx-background-color: linear-gradient(#ffd65b, #e68400),
+    linear-gradient(#ffef84, #f2ba44),
+    linear-gradient(#ffea6a, #efaa22),
+    linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%);
+}
+
+.info-box .button {
+    -fx-background-color: linear-gradient(#ffd65b, #e68400),
+    linear-gradient(#ffef84, #f2ba44),
+    linear-gradient(#ffea6a, #efaa22),
+    linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),
+    linear-gradient(from 0% 0% to 15% 50%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+    -fx-background-radius: 20;
+    -fx-font-family: Unispace;
+    -fx-cursor: HAND;
+}
+
+.info-box > .button-bar {
+    -fx-spacing: 30;
+}
+
+.alert-box {
+    -fx-font-family: Unispace;
+    -fx-background-color: linear-gradient(#ffd65b, #e68400),
+    linear-gradient(#ffef84, #f2ba44),
+    linear-gradient(#ffea6a, #efaa22),
+    linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%);;
+}
+
+.alert-box > .content{
+    -fx-content-display: center;
+    -fx-alignment: center;
+}
+
+.alert-box .button {
+    -fx-background-color: #090a0c,
+    linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+    linear-gradient(#20262b, #191d22),
+    radial-gradient(center 50% 0%, radius 100%, rgba(114, 131, 148, 0.9), rgba(255, 255, 255, 0));
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
+    -fx-font-family: Unispace;
+    -fx-text-fill: white;
+    -fx-cursor: HAND;
+}
+
+/*.alert-box{
+    -fx-background-color: #f0f0f0;
+    -fx-border-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: black;
+    -fx-background-radius: 20px;
+    -fx-border-width: 2px;
+}
+
+.alert-box > *.button-bar > *.container{
+    -fx-background-color: transparent;
+    -fx-alignment: center;
+    -fx-background-radius: 20px;
+}
+
+.alert-box > *.button-bar > *.container > *.button{
+    -fx-alignment: center;
+    -fx-text-fill: black;
+    -fx-font-family: 'Fira Sans';
+
+    -fx-background-color: transparent;
+    -fx-border-color: #4d86f1;
+    -fx-border-radius: 2px;
+    -fx-border-width: 1px;
+    -fx-background-radius: 2px;
+}
+
+.alert-box > *.label.content{
+    -fx-font-size: x-large;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+.alert-box:header *.header-panel{
+    -fx-background-color: transparent;
+    -fx-background-radius: 20px;
+}
+.alert-box:header *.header-panel *.label{
+    -fx-font-size: x-large;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-wrap-text: true;
+}
+
+.alert-box > .content {
+    -fx-background-color: transparent;
+    -fx-background-radius: 20px;
+}
+
+
+.alert-box > *.button-bar > *.container > *.button:hover {
+    -fx-background-color: #d0d9e9;
+
+    -fx-border-width: 1px;
+    -fx-border-radius: 2px;
+    -fx-border-color: #4d86f1;
+}
+
+.alert-box > *.button-bar > *.container > *.button:pressed {
+    -fx-background-color: #4d86f1;
+    -fx-text-fill: #ffffff;
+}
+
+.dialog-pane{
+    -fx-border-color:black;
+    -fx-border-width:2.0px;
+}
+
+.dialog-pane > .button-bar > .container {
+    -fx-background-color:white;
+    -fx-content-display: table-cell;
+    -fx-spacing: 10;
+}
+
+.dialog-pane > .content.label {
+    -fx-padding: 0.5em 0.5em 0.5em 0.5em;
+    -fx-background-color: yellow;
+    -fx-text-fill:black;
+    -fx-font-size:15px;
+}
+
+.dialog-pane:header .header-panel {
+    -fx-background-color: black;
+}
+
+.dialog-pane:header .header-panel .label{
+    -fx-background-color: yellow;
+    -fx-background-radius:10px;
+    -fx-text-fill:black;
+    -fx-font-size:15.0px;
+}
+
+.dialog-pane .button{
+    -fx-background-color:black;
+    -fx-text-fill:white;
+    -fx-wrap-text: true;
+    -fx-effect: dropshadow( three-pass-box, yellow, 10.0, 0.0, 0.0, 0.0);
+    -fx-cursor:hand;
+    -fx-translate-x: -150;
+}
+
+.dialog-pane .button:hover{
+    -fx-background-color:white;
+    -fx-text-fill:black;
+    -fx-font-weight:bold;
+}*/
