@@ -121,7 +121,7 @@ public class Controller {
                 if (dragVertex.isSelected())
                     dragVertex.setLocation(elasticEndLocation);
             }
-            updateGraph(aPen); // We have changed the model, so now update
+            updateGraph(aPen);
         }
     };
 
@@ -152,14 +152,19 @@ public class Controller {
         }
     };
 
+    /**
+     * Initializes the canvas used for graph drawing.
+     */
     public Controller() {
-        graphCanvas.requestFocus();
         graphCanvas.setOnMousePressed(canvasDoubleClicked);
         graphCanvas.setOnMouseDragged(drawEdge);
         graphCanvas.setOnMouseReleased(releaseMouse);
         graphCanvas.setOnKeyReleased(removeSelectedVertices);
     }
 
+    /**
+     * Shows the instructions for the graph drawing.
+     */
     public void showInstructionsWindow() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setHeaderText("Welcome to Graph Drawing!");
@@ -176,7 +181,7 @@ public class Controller {
     }
 
     /**
-     * Loads the drawn Polygon.
+     * Loads the drawn figure.
      */
     public void loadFigure() {
         boolean toggleVal = figurePlacement.isSelected();
@@ -195,9 +200,9 @@ public class Controller {
             case "Ellipse":
                 canvas.getChildren().remove(graphCanvas);
                 if (toggleVal) {
-                    prepareRandomNShape(color);
+                    prepareRandomEllipse(color);
                 } else {
-                    prepareOnClickNShape(color);
+                    prepareOnClickEllipse(color);
                 }
                 break;
             case "Graph":
@@ -209,6 +214,9 @@ public class Controller {
         }
     }
 
+    /**
+     * Toggles the visibility of the buttons and labels based on the selected figure.
+     */
     public void toggleVisibility() {
         switch (figures.getValue()) {
             case "Polygon":
@@ -274,6 +282,11 @@ public class Controller {
         }
     }
 
+    /**
+     * Updates the graph drawing.
+     *
+     * @param aPen the designated `pen` of the canvas that is used for drawing.
+     */
     public void updateGraph(GraphicsContext aPen) {
         aPen.clearRect(0, 0, graphCanvas.getWidth(), graphCanvas.getHeight());
         graph.draw(aPen);
@@ -286,22 +299,29 @@ public class Controller {
                         elasticEndLocation.getY());
     }
 
+    /**
+     * Adds event handler to a shape.
+     *
+     * @param shape a geometric figure.
+     */
     public void addEventHandlerToShape(Shape shape) {
-        shape.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                if (!selectedShapes.contains(shape)) {
-                    shape.setStroke(Color.BLACK);
-                    shape.setStrokeWidth(2.0);
-                    selectedShapes.add(shape);
-                } else {
-                    shape.setStroke(null);
-                    selectedShapes.remove(shape);
-                }
+        shape.addEventHandler(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
+            if (!selectedShapes.contains(shape)) {
+                shape.setStroke(Color.BLACK);
+                shape.setStrokeWidth(2.0);
+                selectedShapes.add(shape);
+            } else {
+                shape.setStroke(null);
+                selectedShapes.remove(shape);
             }
         });
     }
 
+    /**
+     * Computes the value of the radius.
+     *
+     * @return the computed value.
+     */
     public int prepareRadius() {
         Random rand = new Random();
         int radius = rand.ints(50, 100).limit(1).findFirst().getAsInt();
@@ -310,7 +330,12 @@ public class Controller {
         return radius;
     }
 
-    public void prepareRandomNShape(Color color) {
+    /**
+     * Draws an ellipse at a random location.
+     *
+     * @param color the color of the ellipse.
+     */
+    public void prepareRandomEllipse(Color color) {
         double canvasH = canvas.getPrefHeight();
         double canvasW = canvas.getPrefWidth();
         Random rand = new Random();
@@ -324,7 +349,12 @@ public class Controller {
         canvas.getChildren().add(customEllipse);
     }
 
-    public void prepareOnClickNShape(Color color) {
+    /**
+     * Draws an ellipse on click, provided the figure doesn't overstep the boundaries of the canvas.
+     *
+     * @param color the color of the ellipse.
+     */
+    public void prepareOnClickEllipse(Color color) {
         canvas.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -344,8 +374,9 @@ public class Controller {
 
     /**
      * Draws a polygon at a random location.
-     * <p>
-     * the graphics context that handles the canvas.
+     *
+     * @param color the color of the polygon.
+     * @param edges the number of edges the polygon has.
      */
     public void prepareRandomPolygon(Color color, int edges) {
         double canvasH = canvas.getPrefHeight();
@@ -362,9 +393,10 @@ public class Controller {
     }
 
     /**
-     * Creates an event handler for drawing a polygon on mouse click.
-     * <p>
-     * the graphics context that handles the canvas.
+     * Draws a polygon on click, provided the figure doesn't overstep the boundaries of the canvas.
+     *
+     * @param color the color of the polygon.
+     * @param edges the number of edges the polygon has.
      */
     public void prepareOnClickPolygon(Color color, int edges) {
         canvas.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
@@ -384,6 +416,9 @@ public class Controller {
         });
     }
 
+    /**
+     * Allows to choose where to save the drawing.
+     */
     public void chooseFileToSave() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select File to Save");
@@ -393,7 +428,7 @@ public class Controller {
     }
 
     /**
-     *
+     * Saves the drawing at the chosen location.
      */
     public void saveFigure() {
         if (selectedFile != null) {
@@ -422,6 +457,9 @@ public class Controller {
         }
     }
 
+    /**
+     * Deletes the selected shapes.
+     */
     public void deleteSelection() {
         for (Shape shape : selectedShapes) {
             canvas.getChildren().remove(shape);

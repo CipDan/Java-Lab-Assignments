@@ -6,21 +6,33 @@ import javafx.scene.canvas.GraphicsContext;
 import java.util.*;
 import java.util.List;
 
+/**
+ * A representation of a graph.
+ */
 public class Graph {
     private List<Vertex> vertices;
 
+    /**
+     * Creates a graph.
+     */
     public Graph() {
         this(new ArrayList<>());
     }
 
+    /**
+     * Creates a graph.
+     *
+     * @param initialVertices the vertices of the graph.
+     */
     public Graph(ArrayList<Vertex> initialVertices) {
         vertices = initialVertices;
     }
 
-    public List<Vertex> getVertices() {
-        return vertices;
-    }
-
+    /**
+     * Returns the graph's edges.
+     *
+     * @return a list of the graph's edges.
+     */
     public List<Edge> getEdges() {
         ArrayList<Edge> edges = new ArrayList<>();
         for (Vertex n : vertices) {
@@ -32,10 +44,21 @@ public class Graph {
         return edges;
     }
 
+    /**
+     * Adds a new vertex.
+     *
+     * @param aVertex a vertex to be added.
+     */
     public void addVertex(Vertex aVertex) {
         vertices.add(aVertex);
     }
 
+    /**
+     * Adds a new edge.
+     *
+     * @param start starting point of edge.
+     * @param end   ending point of edge.
+     */
     public void addEdge(Vertex start, Vertex end) {
         // First make the edge
         Edge anEdge = new Edge(start, end);
@@ -44,12 +67,22 @@ public class Graph {
         end.addIncidentEdge(anEdge);
     }
 
+    /**
+     * Removes the given edge from the graph.
+     *
+     * @param anEdge the edge to be removed.
+     */
     public void deleteEdge(Edge anEdge) {
         // Just ask the vertices to remove it
         anEdge.getStartVertex().incidentEdges().remove(anEdge);
         anEdge.getEndVertex().incidentEdges().remove(anEdge);
     }
 
+    /**
+     * Removes the given vertex from the graph.
+     *
+     * @param aVertex the vertex to be removed.
+     */
     public void deleteVertex(Vertex aVertex) {
         // Remove the opposite vertex's incident edges
         for (Edge e : aVertex.incidentEdges())
@@ -57,7 +90,13 @@ public class Graph {
         vertices.remove(aVertex); // Remove the vertex now
     }
 
-    // Return the first vertex in which point p is contained, if none, return null
+    /**
+     * Searches for vertices near the given location.
+     *
+     * @param x horizontal coordinate.
+     * @param y vertical coordinate.
+     * @return a vertex if there was one near, otherwise <code>null</code>.
+     */
     public Vertex vertexAt(double x, double y) {
         for (int i = vertices.size() - 1; i >= 0; i--) {
             Vertex n = vertices.get(i);
@@ -69,7 +108,13 @@ public class Graph {
         return null;
     }
 
-    // Return first edge in which point p is near midpoint; if none, return null
+    /**
+     * Searches for edges near the given location.
+     *
+     * @param x horizontal coordinate.
+     * @param y vertical coordinate.
+     * @return an edge if there was one near, otherwise <code>null</code>.
+     */
     public Edge edgeAt(double x, double y) {
         for (Edge e : getEdges()) {
             Vertex n1 = e.getStartVertex();
@@ -98,6 +143,11 @@ public class Graph {
         return null;
     }
 
+    /**
+     * Returns the vertices that are selected.
+     *
+     * @return a list of selected vertices.
+     */
     public List<Vertex> selectedVertices() {
         List<Vertex> selected = new ArrayList<>();
         for (Vertex n : vertices)
@@ -106,6 +156,11 @@ public class Graph {
         return selected;
     }
 
+    /**
+     * Returns the edges that are selected.
+     *
+     * @return a list of selected edges.
+     */
     public List<Edge> selectedEdges() {
         List<Edge> selected = new ArrayList<>();
         for (Edge e : getEdges())
@@ -114,11 +169,16 @@ public class Graph {
         return selected;
     }
 
+    /**
+     * Draws the graph.
+     *
+     * @param aPen the designated `pen` of the canvas that is used for drawing.
+     */
     public void draw(GraphicsContext aPen) {
         List<Edge> edges = getEdges();
-        for (Edge e : edges) // Draw the edges first
+        for (Edge e : edges)
             e.draw(aPen);
-        for (Vertex n : vertices) // Draw the vertices second
+        for (Vertex n : vertices)
             n.draw(aPen);
     }
 }

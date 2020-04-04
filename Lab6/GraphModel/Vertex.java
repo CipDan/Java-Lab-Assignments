@@ -7,49 +7,76 @@ import javafx.scene.paint.Color;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A representation of a vertex.
+ */
 public class Vertex {
     private Point2D location;
     private List<Edge> incidentEdges = new ArrayList<>();
     public static double RADIUS = 15.0;
     private boolean selected = false;
 
+    /**
+     * Creates a new vertex.
+     *
+     * @param x horizontal coordinate.
+     * @param y vertical coordinate.
+     */
     public Vertex(double x, double y) {
         this(new Point2D(x, y));
     }
 
+    /**
+     * Creates a new vertex.
+     *
+     * @param aPoint designated location of the vertex.
+     */
     public Vertex(Point2D aPoint) {
         location = aPoint;
     }
 
+    /**
+     * Returns all the incident edges.
+     *
+     * @return a list of edges.
+     */
     public List<Edge> incidentEdges() {
         return incidentEdges;
     }
 
+    /**
+     * Adds a new incident edge to the list.
+     *
+     * @param e the new incident edge.
+     */
     public void addIncidentEdge(Edge e) {
         incidentEdges.add(e);
     }
 
+    /**
+     * Returns the location of the vertex.
+     *
+     * @return a 2D location.
+     */
     public Point2D getLocation() {
         return location;
     }
 
+    /**
+     * Sets a new location for the vertex.
+     *
+     * @param aPoint the new location.
+     */
     public void setLocation(Point2D aPoint) {
         location = aPoint;
     }
 
-    public void setLocation(double x, double y) {
-        location = new Point2D(x, y);
-    }
-
-    public List<Vertex> neighbours() {
-        List<Vertex> result = new ArrayList<>();
-        for (Edge e : incidentEdges)
-            result.add(e.otherEndFrom(this));
-        return result;
-    }
-
+    /**
+     * Draws the vertex.
+     *
+     * @param aPen the designated `pen` of the canvas that is used for drawing.
+     */
     public void draw(GraphicsContext aPen) {
-        // Draw a blue-filled circle around the center of the vertex
         if (selected)
             aPen.setFill(Color.RED);
         else
@@ -57,17 +84,23 @@ public class Vertex {
 
         aPen.fillOval(location.getX() - RADIUS, location.getY() - RADIUS,
                 RADIUS * 2, RADIUS * 2);
-        // Draw a black border around the circle
         aPen.setStroke(Color.BLACK);
         aPen.strokeOval(location.getX() - RADIUS, location.getY() - RADIUS,
                 RADIUS * 2, RADIUS * 2);
     }
 
-
+    /**
+     * Checks if the vertex is selected.
+     *
+     * @return true if it is, false otherwise.
+     */
     public boolean isSelected() {
         return selected;
     }
 
+    /**
+     * Toggle the `selected` field of the edge.
+     */
     public void toggleSelected() {
         selected = !selected;
     }
