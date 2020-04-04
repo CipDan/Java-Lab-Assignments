@@ -1,5 +1,8 @@
 package Lab7;
 
+import Lab7.GameElements.Game;
+import Lab7.PlayerType.Player;
+
 public class Main {
     public static void main(String[] args) {
         Game newGame = new Game(35, 50, 6);
