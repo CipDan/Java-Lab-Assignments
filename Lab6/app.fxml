@@ -17,146 +17,173 @@
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.text.Font?>
 
-<GridPane id="panel" hgap="10.0" prefHeight="754.0" prefWidth="1404.0" stylesheets="@styling.css" vgap="10.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Lab6.Controller">
+<GridPane id="panel" hgap="10.0" prefHeight="754.0" prefWidth="1404.0" stylesheets="@styling.css" vgap="10.0"
+          xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Lab6.Controller">
     <children>
         <BorderPane id="#borderpane" prefHeight="750.0" prefWidth="1400.0" stylesheets="@styling.css">
             <bottom>
-                <TilePane alignment="CENTER" focusTraversable="true" hgap="50.0" prefHeight="82.0" prefWidth="1400.0" styleClass="optionBar" stylesheets="@styling.css" BorderPane.alignment="CENTER">
+                <TilePane alignment="CENTER" focusTraversable="true" hgap="50.0" prefHeight="82.0" prefWidth="1400.0"
+                          styleClass="optionBar" stylesheets="@styling.css" BorderPane.alignment="CENTER">
                     <children>
-                        <Button fx:id="save" mnemonicParsing="false" onAction="#saveFigure" styleClass="optionButton" stylesheets="@styling.css" text="Save">
+                        <Button fx:id="save" mnemonicParsing="false" onAction="#saveFigure" styleClass="optionButton"
+                                stylesheets="@styling.css" text="Save">
                             <font>
-                                <Font name="Unispace-Bold" size="14.0" />
+                                <Font name="Unispace-Bold" size="14.0"/>
                             </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
                         </Button>
-                        <Button fx:id="exit" mnemonicParsing="false" onAction="#exitApp" styleClass="optionButton" stylesheets="@styling.css" text="Exit">
+                        <Button fx:id="exit" mnemonicParsing="false" onAction="#exitApp" styleClass="optionButton"
+                                stylesheets="@styling.css" text="Exit">
                             <font>
-                                <Font name="Unispace-Bold" size="14.0" />
+                                <Font name="Unispace-Bold" size="14.0"/>
                             </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
                         </Button>
-                        <Button fx:id="load" mnemonicParsing="false" onAction="#loadFigure" styleClass="optionButton" stylesheets="@styling.css" text="Load">
+                        <Button fx:id="load" mnemonicParsing="false" onAction="#loadFigure" styleClass="optionButton"
+                                stylesheets="@styling.css" text="Load">
                             <font>
-                                <Font name="Unispace-Bold" size="14.0" />
+                                <Font name="Unispace-Bold" size="14.0"/>
                             </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
                         </Button>
-                        <Button fx:id="reset" mnemonicParsing="false" onAction="#resetCanvas" styleClass="optionButton" stylesheets="@styling.css" text="Reset">
+                        <Button fx:id="reset" mnemonicParsing="false" onAction="#resetCanvas" styleClass="optionButton"
+                                stylesheets="@styling.css" text="Reset">
                             <font>
-                                <Font name="Unispace-Bold" size="14.0" />
+                                <Font name="Unispace-Bold" size="14.0"/>
                             </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
                         </Button>
                     </children>
                 </TilePane>
             </bottom>
-         <center>
-            <Pane id="canvas" fx:id="canvas" prefHeight="586.0" prefWidth="1170.0" stylesheets="@styling.css" BorderPane.alignment="CENTER" />
-         </center>
-         <right>
-            <TilePane alignment="CENTER" focusTraversable="true" orientation="VERTICAL" prefHeight="586.0" prefWidth="230.0" styleClass="customize" stylesheets="@styling.css" vgap="50.0" BorderPane.alignment="CENTER">
-               <children>
-                  <TilePane alignment="CENTER" focusTraversable="true" prefHeight="61.0" prefWidth="160.0">
-                     <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="160.0" stylesheets="@styling.css" text="Available Figures:">
-                                  <font>
-                                      <Font name="Unispace-Bold" size="14.0" />
-                                  </font>
-                              </Label>
-                              <ChoiceBox id="choices" fx:id="figures" onAction="#toggleVisibility" prefWidth="150.0" stylesheets="@styling.css" value="Polygon">
-                                  <cursor>
-                                      <Cursor fx:constant="HAND" />
-                                  </cursor>
-                                  <items>
-                                      <FXCollections fx:factory="observableArrayList">
-                                          <String fx:value="Polygon" />
-                                          <String fx:value="Ellipse" />
-                                          <String fx:value="Graph" />
-                                      </FXCollections>
-                                  </items>
-                              </ChoiceBox>
-                     </children>
-                  </TilePane>
-                  <Button fx:id="fileChooser" mnemonicParsing="false" onAction="#chooseFileToSave" styleClass="customButton" stylesheets="@styling.css" text="Savefile" textFill="WHITE">
-                     <font>
-                        <Font name="Unispace-Bold" size="12.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Button fx:id="deleteFigure" mnemonicParsing="false" onAction="#deleteSelection" styleClass="customButton" stylesheets="@styling.css" text="Delete Figure" textFill="WHITE">
-                     <font>
-                        <Font name="Unispace-Bold" size="12.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-               </children>
-            </TilePane>
-         </right>
-         <top>
-            <TilePane alignment="CENTER" focusTraversable="true" prefHeight="82.0" prefWidth="1400.0" styleClass="optionBar" stylesheets="@styling.css" BorderPane.alignment="CENTER">
-               <children>
-                        <Label fx:id="edgeLabel" contentDisplay="CENTER" prefHeight="40.0" prefWidth="65.0" stylesheets="@styling.css" text="Figure Edges:" textAlignment="RIGHT" textFill="WHITE" wrapText="true">
+            <center>
+                <Pane id="canvas" fx:id="canvas" prefHeight="586.0" prefWidth="1170.0" stylesheets="@styling.css"
+                      BorderPane.alignment="CENTER"/>
+            </center>
+            <right>
+                <TilePane alignment="CENTER" focusTraversable="true" orientation="VERTICAL" prefHeight="586.0"
+                          prefWidth="230.0" styleClass="customize" stylesheets="@styling.css" vgap="50.0"
+                          BorderPane.alignment="CENTER">
+                    <children>
+                        <TilePane alignment="CENTER" focusTraversable="true" prefHeight="61.0" prefWidth="160.0">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="160.0"
+                                       stylesheets="@styling.css" text="Available Figures:">
+                                    <font>
+                                        <Font name="Unispace-Bold" size="14.0"/>
+                                    </font>
+                                </Label>
+                                <ChoiceBox id="choices" fx:id="figures" onAction="#toggleVisibility" prefWidth="150.0"
+                                           stylesheets="@styling.css" value="Polygon">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND"/>
+                                    </cursor>
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Polygon"/>
+                                            <String fx:value="Ellipse"/>
+                                            <String fx:value="Graph"/>
+                                        </FXCollections>
+                                    </items>
+                                </ChoiceBox>
+                            </children>
+                        </TilePane>
+                        <Button fx:id="fileChooser" mnemonicParsing="false" onAction="#chooseFileToSave"
+                                styleClass="customButton" stylesheets="@styling.css" text="Savefile" textFill="WHITE">
                             <font>
-                                <Font name="Unispace-Bold" size="14.0" />
+                                <Font name="Unispace-Bold" size="12.0"/>
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Button>
+                        <Button fx:id="deleteFigure" mnemonicParsing="false" onAction="#deleteSelection"
+                                styleClass="customButton" stylesheets="@styling.css" text="Delete Figure"
+                                textFill="WHITE">
+                            <font>
+                                <Font name="Unispace-Bold" size="12.0"/>
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Button>
+                    </children>
+                </TilePane>
+            </right>
+            <top>
+                <TilePane alignment="CENTER" focusTraversable="true" prefHeight="82.0" prefWidth="1400.0"
+                          styleClass="optionBar" stylesheets="@styling.css" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label fx:id="edgeLabel" contentDisplay="CENTER" prefHeight="40.0" prefWidth="65.0"
+                               stylesheets="@styling.css" text="Figure Edges:" textAlignment="RIGHT" textFill="WHITE"
+                               wrapText="true">
+                            <font>
+                                <Font name="Unispace-Bold" size="14.0"/>
                             </font>
                         </Label>
-                        <Spinner fx:id="edgeNum" max="10" min="3" prefHeight="25.0" prefWidth="58.0" stylesheets="@styling.css">
+                        <Spinner fx:id="edgeNum" max="10" min="3" prefHeight="25.0" prefWidth="58.0"
+                                 stylesheets="@styling.css">
                             <cursor>
-                                <Cursor fx:constant="HAND" />
+                                <Cursor fx:constant="HAND"/>
                             </cursor>
                         </Spinner>
-                        <Label fx:id="placementLabel" contentDisplay="CENTER" prefHeight="40.0" prefWidth="88.0" stylesheets="@styling.css" text="Figure Placement:" textAlignment="RIGHT" textFill="WHITE" wrapText="true">
+                        <Label fx:id="placementLabel" contentDisplay="CENTER" prefHeight="40.0" prefWidth="88.0"
+                               stylesheets="@styling.css" text="Figure Placement:" textAlignment="RIGHT"
+                               textFill="WHITE" wrapText="true">
                             <font>
-                                <Font name="Unispace-Bold" size="14.0" />
+                                <Font name="Unispace-Bold" size="14.0"/>
                             </font>
                         </Label>
-                        <ToggleButton fx:id="figurePlacement" mnemonicParsing="false" stylesheets="@styling.css" text="Random" textAlignment="CENTER">
+                        <ToggleButton fx:id="figurePlacement" mnemonicParsing="false" stylesheets="@styling.css"
+                                      text="Random" textAlignment="CENTER">
                             <font>
-                                <Font name="Unispace-Bold" size="12.0" />
+                                <Font name="Unispace-Bold" size="12.0"/>
                             </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
                         </ToggleButton>
-                        <Label fx:id="colorLabel" contentDisplay="CENTER" prefHeight="40.0" prefWidth="65.0" stylesheets="@styling.css" text="Figure Color:" textAlignment="RIGHT" textFill="WHITE" wrapText="true">
+                        <Label fx:id="colorLabel" contentDisplay="CENTER" prefHeight="40.0" prefWidth="65.0"
+                               stylesheets="@styling.css" text="Figure Color:" textAlignment="RIGHT" textFill="WHITE"
+                               wrapText="true">
                             <font>
-                                <Font name="Unispace-Bold" size="14.0" />
+                                <Font name="Unispace-Bold" size="14.0"/>
                             </font>
                         </Label>
-                        <ColorPicker id="palette" fx:id="figureColour" prefHeight="24.0" prefWidth="100.0" stylesheets="@styling.css">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></ColorPicker>
-                  <Button id="instructions" fx:id="showInstructions" managed="false" mnemonicParsing="false" onAction="#showInstructionsWindow" prefHeight="42.0" prefWidth="160.0" stylesheets="@styling.css" text="Show Instructions" visible="false">
-                     <font>
-                        <Font name="Unispace-Bold" size="12.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-               </children>
-            </TilePane>
-         </top>
+                        <ColorPicker id="palette" fx:id="figureColour" prefHeight="24.0" prefWidth="100.0"
+                                     stylesheets="@styling.css">
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </ColorPicker>
+                        <Button id="instructions" fx:id="showInstructions" managed="false" mnemonicParsing="false"
+                                onAction="#showInstructionsWindow" prefHeight="42.0" prefWidth="160.0"
+                                stylesheets="@styling.css" text="Show Instructions" visible="false">
+                            <font>
+                                <Font name="Unispace-Bold" size="12.0"/>
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Button>
+                    </children>
+                </TilePane>
+            </top>
         </BorderPane>
     </children>
     <columnConstraints>
-        <ColumnConstraints />
+        <ColumnConstraints/>
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints />
+        <RowConstraints/>
     </rowConstraints>
 
 </GridPane>

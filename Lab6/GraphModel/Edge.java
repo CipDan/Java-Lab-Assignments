@@ -4,7 +4,6 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 public class Edge {
-    private String label;
     private Vertex startVertex, endVertex;
     private boolean selected;
 

@@ -1,5 +1,7 @@
 package Lab6;
 
+import Lab6.Figures.CustomEllipse;
+import Lab6.Figures.RegularPolygon;
 import Lab6.GraphModel.Edge;
 import Lab6.GraphModel.Graph;
 import Lab6.GraphModel.Vertex;
@@ -203,8 +205,6 @@ public class Controller {
                     canvas.getChildren().add(graphCanvas);
                     graphCanvas.requestFocus();
                 }
-                System.out.println(graph.getVertices().size());
-                System.out.println(graph.getEdges().size());
                 break;
         }
     }
