@@ -10,13 +10,15 @@ import java.util.List;
 /**
  * A representation of a player.
  */
-public class Player implements Runnable {
-    private static final int THINKING_TIME = 10;
-    private int id;
-    private String name;
-    private Game game;
-    private int finalScore = 0;
-    private List<Token> takenTokens = new LinkedList<>();
+public abstract class Player implements Runnable {
+    protected static final int THINKING_TIME = 10;
+    protected int id;
+    protected String name;
+    protected Game game;
+    protected int finalScore = 0;
+    protected List<Token> takenTokens = new LinkedList<>();
+
+    protected abstract void extractToken(Board board);
 
     /**
      * Creates a new player.
@@ -81,31 +83,8 @@ public class Player implements Runnable {
             return false;
         }
 
-        int numOfTokens = takenTokens.size();
-        if (numOfTokens < 2) {
-            takenTokens.add(board.getAndRemoveToken(0));
-            System.out.println("[P" + id + "] " + name + " a extras token-ul (" + takenTokens.
-                    get(takenTokens.size() - 1).getNumber() + ")");
-        } else {
-            boolean foundToken = false;
-            int index = 0;
-            int difference = Math.abs(takenTokens.get(numOfTokens - 1).getNumber() -
-                    takenTokens.get(numOfTokens - 2).getNumber());
-            while ((!foundToken) && (index < game.getGameBoard().getSize())) {
-                Token token = game.getGameBoard().getTokens().get(index);
-                if (Math.abs(takenTokens.get(numOfTokens - 1).getNumber() - token.getNumber()) == difference) {
-                    foundToken = true;
-                }
-                index++;
-            }
-            if (foundToken) {
-                takenTokens.add(board.getAndRemoveToken(index));
-                System.out.println("[P" + id + "] " + name + " a extras token-ul (" + takenTokens.
-                        get(numOfTokens - 1).getNumber() + ")");
-            } else
-                System.out.println("[P" + id + "] " + name + " nu a extras nimic.");
-        }
-
+        extractToken(board);
+        System.out.println("[P" + getId() + "] " + getName() + " - is done!");
         Thread.sleep(THINKING_TIME);
         if (hasLengthK(game.getGoalSize())) {
             game.setWinner(this);

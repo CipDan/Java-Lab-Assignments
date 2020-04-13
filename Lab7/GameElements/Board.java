@@ -41,6 +41,15 @@ public class Board {
         return null;
     }
 
+    public int findAndReturnIndex(int number) {
+        int size = tokens.size();
+        for (int i = 0; i < size; ++i) {
+            if (tokens.get(i).getNumber() == number)
+                return i;
+        }
+        return -1;
+    }
+
     /**
      * Returns the number of tokens used in the game.
      *

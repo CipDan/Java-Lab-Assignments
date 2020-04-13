@@ -32,10 +32,10 @@ public class TimeKeeper implements Runnable {
         countdownTask = new TimerTask() {
             @Override
             public void run() {
-                if (countdownSeconds == 1) {
+                if (countdownSeconds != 0) {
                     System.out.println(countdownSeconds-- + " second left!");
                 } else {
-                    System.out.println(countdownSeconds-- + " seconds left!");
+                    System.out.println("Time's up!");
                 }
             }
         };
