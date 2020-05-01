@@ -5,6 +5,6 @@
 
 ![Album Ranking Chart in Database](chart_table.png)
 
-
+![Album Ranking Chart](album_ranking_chart.png)
 
 ![VisualVM Test](visual_vm.png)
