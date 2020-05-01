@@ -8,5 +8,6 @@ public class Main {
         System.in.read();
         Database database = Database.getInstance();
         database.closeConnection();
+        System.out.println("Done");
     }
 }
