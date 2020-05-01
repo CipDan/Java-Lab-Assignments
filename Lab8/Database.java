@@ -15,7 +15,7 @@ public class Database {
 
     public void openConnection() {
         try {
-            connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/musicalbums", "dba", "sql");
+            connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/musicalbums", "Ciprian", "sql");
             System.out.println("All good!");
         } catch (SQLException ex) {
             System.out.println("Error: unable to connect to database!");
