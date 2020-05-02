@@ -8,8 +8,11 @@ import Lab9.util.PersistenceUtil;
 
 import java.util.List;
 
+/**
+ * The `main` class.
+ */
 public class AlbumManager {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         PersistenceUtil.getInstance();
         ArtistRepository artistRepository = new ArtistRepository();
         AlbumRepository albumRepository = new AlbumRepository();
