@@ -8,6 +8,9 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+/**
+ * A implementation of a thread which handles client requests.
+ */
 public class ClientThread extends Thread {
 
     private Socket socket = null;
@@ -16,11 +19,20 @@ public class ClientThread extends Thread {
     private boolean hasJoinedAGame = false;
     private boolean isRunning = false;
 
+    /**
+     * Initializes the thread.
+     *
+     * @param socket       the client's socket.
+     * @param serverSocket the server socket.
+     */
     public ClientThread(Socket socket, ServerSocket serverSocket) {
         this.socket = socket;
         this.serverSocket = serverSocket;
     }
 
+    /**
+     * Runs the thread.
+     */
     public void run() {
         try {
             BufferedReader in = new BufferedReader(
@@ -42,7 +54,7 @@ public class ClientThread extends Thread {
                         }
                         return;
                     case "create game":
-                        if(currentGame == null){
+                        if (currentGame == null) {
                             out.println("true");
                             String option = in.readLine();
                             if (option.equals("big")) {
@@ -54,34 +66,30 @@ public class ClientThread extends Thread {
                             currentGame.addPlayer(new Player(playerName));
                             answer = "Game set up! Welcome, " + playerName + "!";
                             hasJoinedAGame = true;
-                        }
-                        else{
+                        } else {
                             out.println("false");
                             answer = "A game is already set up! Perhaps you want to join it?";
                         }
                         out.println(answer);
                         break;
                     case "join game":
-                        if(currentGame != null){
-                            if(!hasJoinedAGame){
-                                if(currentGame.getPlayers().size() < 2){
+                        if (currentGame != null) {
+                            if (!hasJoinedAGame) {
+                                if (currentGame.getPlayers().size() < 2) {
                                     out.println("true");
                                     String playerName = in.readLine();
                                     currentGame.addPlayer(new Player(playerName));
                                     answer = "Game joined! Welcome, " + playerName;
                                     hasJoinedAGame = true;
-                                }
-                                else{
+                                } else {
                                     out.println("false");
                                     answer = "Cannot join! Game already in progress!";
                                 }
-                            }
-                            else{
+                            } else {
                                 out.println("false");
                                 answer = "You have already joined a game!";
                             }
-                        }
-                        else{
+                        } else {
                             out.println("false");
                             answer = "There is no game created. Perhaps you want to create one?";
                         }

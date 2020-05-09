@@ -2,10 +2,18 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+/**
+ * An implementation of a TCP Server.
+ */
 public class GameServer {
 
     public static final int PORT = 8100;
 
+    /**
+     * Runs the server application, which creates a new thread for each new player.
+     *
+     * @throws IOException if an I/O error occurs.
+     */
     public GameServer() throws IOException {
         ServerSocket serverSocket = null;
         try {
@@ -19,10 +27,18 @@ public class GameServer {
         } catch (IOException e) {
             System.err.println("Ooops... " + e);
         } finally {
-            serverSocket.close();
+            if (serverSocket != null) {
+                serverSocket.close();
+            }
         }
     }
 
+    /**
+     * The `main` method.
+     *
+     * @param args command line arguments.
+     * @throws IOException if an I/O error occurs.
+     */
     public static void main(String[] args) throws IOException {
         GameServer server = new GameServer();
     }

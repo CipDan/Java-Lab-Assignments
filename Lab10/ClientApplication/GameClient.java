@@ -6,8 +6,14 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.Scanner;
 
+/**
+ * An implementation of a TCP Client.
+ */
 public class GameClient {
 
+    /**
+     * Shows an animated introductory announcement.
+     */
     public static void announcement() {
         try {
             int i;
@@ -55,6 +61,13 @@ public class GameClient {
         }
     }
 
+    /**
+     * Snds to the server a request to start a new game.
+     *
+     * @param out     the socket's write end.
+     * @param scanner a <code>Scanner</code> for reading user input.
+     * @throws InterruptedException if any thread has interrupted the current thread. The interrupted status of the current thread is cleared when this exception is thrown.
+     */
     public static void createGame(PrintWriter out, Scanner scanner) throws InterruptedException {
         String msg = "\nWhat kind of game board should I set up? You can choose between 'big' and 'small'.\n";
         int it;
@@ -75,6 +88,13 @@ public class GameClient {
         out.println(choice);
     }
 
+    /**
+     * Asks client for necessary data to create a new player and then sends the data to the server.
+     *
+     * @param out     the socket's write end.
+     * @param scanner a <code>Scanner</code> for reading user input.
+     * @throws InterruptedException if any thread has interrupted the current thread. The interrupted status of the current thread is cleared when this exception is thrown.
+     */
     public static void createPlayer(PrintWriter out, Scanner scanner) throws InterruptedException {
         int it;
         String msg = "\nPlease enter a name: ";
@@ -86,6 +106,13 @@ public class GameClient {
         out.println(playerName);
     }
 
+    /**
+     * Reads message received from server and displays it.
+     *
+     * @param in the socket's read end.
+     * @throws IOException          if an I/O error occurs.
+     * @throws InterruptedException if any thread has interrupted the current thread. The interrupted status of the current thread is cleared when this exception is thrown.
+     */
     public static void displayServerMsg(BufferedReader in) throws IOException, InterruptedException {
         String msg = "\n" + in.readLine() + "\n";
         int it;
@@ -95,6 +122,12 @@ public class GameClient {
         }
     }
 
+    /**
+     * Runs the client side of the application.
+     *
+     * @param args command line arguments.
+     * @throws IOException if an I/O error occurs.
+     */
     public static void main(String[] args) throws IOException {
         String serverAddress = "127.0.0.1"; // The server's IP address
         int PORT = 8100; // The server's port
@@ -128,7 +161,7 @@ public class GameClient {
                     case "create game":
                         out.println(request);
                         state = in.readLine();
-                        if(state.compareTo("true") == 0){
+                        if (state.compareTo("true") == 0) {
                             createGame(out, scanner);
                             createPlayer(out, scanner);
                         }
@@ -137,7 +170,7 @@ public class GameClient {
                     case "join game":
                         out.println(request);
                         state = in.readLine();
-                        if(state.compareTo("true") == 0){
+                        if (state.compareTo("true") == 0) {
                             createPlayer(out, scanner);
                         }
                         displayServerMsg(in);
