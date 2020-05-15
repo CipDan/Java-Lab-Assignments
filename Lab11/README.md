@@ -13,9 +13,9 @@
      <td>Postman POST</td>
   </tr>
   <tr>
-    <td><img src="browser_getall.png" width=270></td>
-    <td><img src="browser_get.png" width=270></td>
-    <td><img src="postman_post.png" width=270></td>
+    <td><img src="images_README/browser_getall.png" width=270></td>
+    <td><img src="images_README/browser_get.png" width=270></td>
+    <td><img src="images_README/postman_post.png" width=270></td>
   </tr>
  </table>
  
@@ -26,8 +26,8 @@
      <td>Project Database</td>
   </tr>
   <tr>
-    <td><img src="postman_put.png" width=270></td>
-    <td><img src="postman_delete.png" width=270></td>
-    <td><img src="spring_project_database.png" width=270></td>
+    <td><img src="images_README/postman_put.png" width=270></td>
+    <td><img src="images_README/postman_delete.png" width=270></td>
+    <td><img src="images_README/spring_project_database.png" width=270></td>
   </tr>
  </table>
