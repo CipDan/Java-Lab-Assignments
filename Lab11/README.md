@@ -9,26 +9,39 @@
 
 <table>
   <tr>
-    <td>Browser GET All</td>
-     <td>Browser GET</td>
-     <td>Postman POST</td>
+    <td>Browser GET All Players</td>
+     <td>Browser GET Players</td>
+     <td>Postman POST Players</td>
   </tr>
   <tr>
-    <td><img src="images_README/browser_getall.png" width=270></td>
-    <td><img src="images_README/browser_get.png" width=270></td>
-    <td><img src="images_README/postman_post.png" width=270></td>
+    <td><img src="images_README/browser_getall_players.png" width=270></td>
+    <td><img src="images_README/browser_get_players.png" width=270></td>
+    <td><img src="images_README/postman_post_players.png" width=270></td>
   </tr>
  </table>
  
  <table>
   <tr>
-    <td>Postman PUT</td>
-     <td>Postman DELETE</td>
+    <td>Postman PUT Players</td>
+     <td>Postman DELETE Players</td>
      <td>Project Database</td>
   </tr>
   <tr>
-    <td><img src="images_README/postman_put.png" width=270></td>
-    <td><img src="images_README/postman_delete.png" width=270></td>
+    <td><img src="images_README/postman_put_players.png" width=270></td>
+    <td><img src="images_README/postman_delete_players.png" width=270></td>
     <td><img src="images_README/spring_project_database.png" width=270></td>
+  </tr>
+ </table>
+
+<table>
+  <tr>
+    <td>Postman GET All Games</td>
+     <td>Postman POST Games</td>
+     <td>Error Handling with RestControllerAdvice</td>
+  </tr>
+  <tr>
+    <td><img src="images_README/postman_getall_games.png" width=270></td>
+    <td><img src="images_README/postman_post_games.png" width=270></td>
+    <td><img src="images_README/error_handling.png" width=270></td>
   </tr>
  </table>
