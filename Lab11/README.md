@@ -1,4 +1,4 @@
-# Lab 10's Assignment - Notes:
+# Lab 11's Assignment - Notes:
 
 1. The classes contain code for the Compulsory and Optional sections (all classes from `player` directory and Lab11Application class - Compulsory; all classes from `config`, `exception` and `game` directories - Optional);
 2. All classes have javadoc and explanatory comments;
