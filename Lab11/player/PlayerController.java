@@ -1,4 +1,4 @@
-package com.example.lab11;
+package com.example.lab11.player;
 
 
 import com.example.lab11.exception.PlayerNotFoundException;

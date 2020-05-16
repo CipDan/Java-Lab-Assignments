@@ -1,7 +1,6 @@
-package com.example.lab11;
+package com.example.lab11.player;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.Objects;
