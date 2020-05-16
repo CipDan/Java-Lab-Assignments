@@ -40,7 +40,7 @@
      <td>Error Handling with RestControllerAdvice</td>
   </tr>
   <tr>
-    <td><img src="images_README/postman_getall_games.png" width=270></td>
+    <td><img src="images_README/browser_getall_games.png" width=270></td>
     <td><img src="images_README/postman_post_games.png" width=270></td>
     <td><img src="images_README/error_handling.png" width=270></td>
   </tr>
