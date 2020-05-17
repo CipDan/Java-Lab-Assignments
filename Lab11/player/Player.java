@@ -1,5 +1,8 @@
 package com.example.lab11.player;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -8,16 +11,20 @@ import java.util.Objects;
 /**
  * An entity representation of a player.
  */
+@ApiModel(description = "Details about a player")
 @Entity
 @Table(name = "players", schema = "springboot")
 public class Player {
+    @ApiModelProperty(notes = "The unique id of the player")
     @Id
     @GeneratedValue
     private Integer id;
 
+    @ApiModelProperty(notes = "The player's name")
     @NotEmpty
     private String name;
 
+    @ApiModelProperty(notes = "The id of the game in which the player is at the moment")
     @NotNull
     private int gameId;
 

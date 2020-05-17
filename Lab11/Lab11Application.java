@@ -7,11 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * The `main` class.
  */
 @SpringBootApplication
+
 public class Lab11Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Lab11Application.class, args);
         System.out.println("Hello world!");
     }
-
 }

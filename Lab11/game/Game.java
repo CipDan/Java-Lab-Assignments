@@ -1,6 +1,9 @@
 package com.example.lab11.game;
 
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -11,18 +14,23 @@ import java.util.Objects;
 /**
  * An entity representation of a game.
  */
+@ApiModel(description = "Details about a game")
 @Entity
 @Table(name = "games", schema = "springboot")
 public class Game {
+    @ApiModelProperty(notes = "The unique id of the game")
     @Id
     private Integer id;
 
+    @ApiModelProperty(notes = "The id of the first player that is currently in the game")
     @NotNull
     private Integer idPlayer1;
 
+    @ApiModelProperty(notes = "The id of the second player that is currently in the game")
     @NotNull
     private Integer idPlayer2;
 
+    @ApiModelProperty(notes = "The game's name")
     @NotEmpty
     private String name;
 
