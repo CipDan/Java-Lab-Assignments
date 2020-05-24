@@ -4,8 +4,6 @@ import lombok.Getter;
 
 import javax.swing.JFrame;
 
-import java.io.Serializable;
-
 import static java.awt.BorderLayout.NORTH;
 import static java.awt.BorderLayout.CENTER;
 

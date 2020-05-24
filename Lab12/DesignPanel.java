@@ -48,13 +48,13 @@ public class DesignPanel extends JPanel implements Serializable {
         repaint();
     }
 
-    public MainFrame getFrame() {
+    /*public MainFrame getFrame() {
         return frame;
     }
 
     public void setFrame(MainFrame frame) {
         this.frame = frame;
-    }
+    }*/
 
     public int getPanelWidth() {
         return panelWidth;
