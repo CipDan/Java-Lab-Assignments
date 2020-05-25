@@ -42,32 +42,44 @@ public class DesignPanel extends JPanel implements Serializable {
      *
      * @param component the component to be added.
      */
-    public void addSwingComponentToPanel(Component component) {
+    public void addSwingComponentToPanel(JComponent component) {
         add(component);
         revalidate();
         repaint();
     }
 
-    /*public MainFrame getFrame() {
-        return frame;
-    }
-
-    public void setFrame(MainFrame frame) {
-        this.frame = frame;
-    }*/
-
+    /**
+     * Returns the panel's width.
+     *
+     * @return an <code>int</code>.
+     */
     public int getPanelWidth() {
         return panelWidth;
     }
 
+    /**
+     * Sets the panel's width.
+     *
+     * @param panelWidth the new width.
+     */
     public void setPanelWidth(int panelWidth) {
         this.panelWidth = panelWidth;
     }
 
+    /**
+     * Returns the panel's height.
+     *
+     * @return an <code>int</code>.
+     */
     public int getPanelHeight() {
         return panelHeight;
     }
 
+    /**
+     * Sets the panel's height.
+     *
+     * @param panelHeight the new height.
+     */
     public void setPanelHeight(int panelHeight) {
         this.panelHeight = panelHeight;
     }

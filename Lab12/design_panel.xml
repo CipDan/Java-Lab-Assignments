@@ -8,11 +8,16 @@
     </void>
    </object>
   </void>
+  <void method="add">
+   <object class="javax.swing.JButton">
+    <string>OK!</string>
+   </object>
+  </void>
   <void property="panelHeight">
    <int>500</int>
   </void>
   <void property="panelWidth">
-   <int>1200</int>
+   <int>800</int>
   </void>
  </object>
 </java>
